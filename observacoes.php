@@ -39,7 +39,7 @@ include 'bootstrap.php'
 
 	<br>
 
-	<div class="row alert alert-primary">
+	<div class="row alert alert-primary" id="idobservacoes">
 		<div class="col-12">
 			<center>
 				<b>Observações</b>
@@ -47,15 +47,35 @@ include 'bootstrap.php'
 		</div>
 	</div>
 
-	<div>
+	<div id="divobservacoes">
+		<p class="p">
+			<i>
+				A taxa de crescimento de atendimento escolar vem crescendo anualmente em uma média de 2,7 à 3,0%, e ao longo do últimos anos o minitério público da educação vem construindo uma política sistêmatica contra o analfabetismo. 
+			</i>
+		</p>
 		<p>
 			<i>
-				
+				Existe um programa chamado de "Brasil Afalbetizado", que foi desenvolvido através do consenço entre o governo federal, colaboração de estados, o Distrito Federal e municípios. O programa garante recursos suplementares para alfabetizadores, como: aquisição e produção de material pedagógico; alimentação escolar e transporte dos alfabetizandos.
+			</i>
+		</p>
+		<p>
+			<i>
+				Ainda de acordo com pesquisas do IBGE que apontam que entre o ano de 2001 a 2014 a taxa de analfabetizados aumentou em 4,3% .
 			</i>
 		</p>
 	</div>
 
-	<script type="text/javascript" src="javascript.js"></script>
+
+	<script type="text/javascript">
+		$("#divobservacoes").hide();
+		
+		$("#idobservacoes" ).click(() => {
+			$( "#divobservacoes" ).toggle( "slow", function() {
+    		// Animation Motivo por não irem a escola.
+			});
+		});
+
+	</script>
 	<!--https://docs.microsoft.com/pt-br/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-2017-->
 </body>
 </html>

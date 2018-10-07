@@ -25,12 +25,12 @@ include 'bootstrap.php'
 						<a class="dropdown-item" href="pvBrasileiro.php">Povo Brasileiro</a>
 						<a class="dropdown-item" href="graficos.php">Gráficos</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">Observações</a>
+						<a class="dropdown-item" href="observacoes.php">Observações</a>
 					</div>
 				</li>
 			</ul>
 			<form class="form-inline my-2 my-lg-0">
-				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="filtro-nome" value="">
 				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 			</form>
 		</div>
@@ -47,7 +47,7 @@ include 'bootstrap.php'
 	</div>
 
 	<div id="tb_infoAnalfabestismo">
-		<table class="table">
+		<table class="table" id="tb_informacoesindex">
 			<thead class="thead-dark">
 				<tr>
 					<th scope="col">#</th>

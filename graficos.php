@@ -71,8 +71,8 @@ include 'bootstrap.php'
 						<button type="button" class="btn btn-light">90%</button>
 						<button type="button" class="btn btn-light">80%</button>
 						<button type="button" class="btn btn-light">70%</button>
-						<button type="button" class="btn btn-light">60%</button>
-						<button type="button" class="btn btn-light">50%</button>
+						<button type="button" class="btn btn-success">60%</button>
+						<button type="button" class="btn btn-success">50%</button>
 						<button type="button" class="btn btn-success">40%</button>
 						<button type="button" class="btn btn-success">30%</button>
 						<button type="button" class="btn btn-primary">20%</button>
@@ -89,7 +89,7 @@ include 'bootstrap.php'
 						<button type="button" class="btn btn-light">60%</button>
 						<button type="button" class="btn btn-light">50%</button>
 						<button type="button" class="btn btn-light">40%</button>
-						<button type="button" class="btn btn-light">30%</button>
+						<button type="button" class="btn btn-success">30%</button>
 						<button type="button" class="btn btn-primary">20%</button>
 						<button type="button" class="btn btn-primary">10%</button>
 						<button type="button" class="btn btn-primary">0%</button>
@@ -115,20 +115,68 @@ include 'bootstrap.php'
 	</table>
 	<br>
 
-	<div class="alert alert-info" >
+	<div class="alert alert-info" id="colDesc">
 		<center>
-			<div id="colDesc">Descrição</div>
+			<div>Descrição</div>
 		</center>
 	</div>
 	<div class="row" id="rowDesc">
+		<div class="modal" tabindex="-1" role="dialog" id="modalDescR">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Descrição de Analfabetismo</h5>
+						<button type="button" class="close" id="closeR" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>O nível razoavél é entre 1% e 20% da população brasileira, os 20% atingem um  média de poucos mais de 23 milhões de pessoas, fica entre a faixa de 23 a 25 milhões algo que sim é desgradavél ao país mas ainda há o que se fazer para mudar.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal" tabindex="-1" role="dialog" id="modalDescM">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Descrição de Analfabetismo</h5>
+						<button type="button" class="close" id="closeM" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>O nível mediano esta entre 21% a 60% da população brasileira, os 60% atingem um  média 70 milhões de pessoas, fica entre a faixa de 69 a 71 milhões de analfabetos (se fossem até 60%), algo que sim é desgradavél ao país, deixando quase impossível de o que se fazer para melhorar o conhecimento de ler e escever do analfabetos.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal" tabindex="-1" role="dialog" id="modalDescC">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Descrição de Analfabetismo</h5>
+						<button type="button" class="close" id="closeC" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>O nível critíco é qualquer porcentagem a cima de 60% da população brasileira, essa porcentagem varia de 72 milhões de pessoas a toda a população, o que novamente torna quase impossível a possibilidade de alfabetizar uma populalção inteira.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="col-2">
-			<button class="btn btn-primary">Razoavel</button>
+			<button class="btn btn-primary" id="Razoavel">Razoavel</button>
 		</div>
 		<div class="col-2">
-			<button class="btn btn-success">Mediano</button>
+			<button class="btn btn-success" id="Mediano">Mediano</button>
 		</div>
 		<div class="col-2">
-			<button class="btn btn-danger">Critico</button>
+			<button class="btn btn-danger" id="Critico">Critico</button>
 		</div>
 	</div>
 
@@ -138,35 +186,69 @@ include 'bootstrap.php'
 		$("#tbAdultos").hide()
 		$("#tbCriancas").hide()
 		$("#rowDesc").hide()
+		$("#modalDescR").hide()
+		$("#modalDescM").hide()
+		$("#modalDescC").hide()
 
 		$("#Total" ).click(() => {
-			$( "#tbTotal" ).toggle( "slow", function() {
+			$( "#tbTotal" ).toggle( "slow", () => {
     			// Animation Grafico Total.
     		});
 		});
 
 		$("#Idosos" ).click(() => {
-			$( "#tbIdosos" ).toggle( "slow", function() {
-    			// Animation Grafico Idosos.
+			$( "#tbIdosos" ).toggle( "slow", () => {
+    			// |Animation Grafico Idosos.
     		});
 		});
 
 		$("#Adultos" ).click(() => {
-			$( "#tbAdultos" ).toggle( "slow", function() {
-    			// Animation Grafico Adultos.
+			$( "#tbAdultos" ).toggle( "slow", () => {
+    			// |Animation Grafico Adultos.
     		});
 		});
 
 		$("#Criancas" ).click(() => {
-			$( "#tbCriancas" ).toggle( "slow", function() {
-    			// Animation Grafico Criancas.
+			$( "#tbCriancas" ).toggle( "slow", () => {
+    			// |Animation Grafico Criancas.
     		});
 		});
 
 		$("#colDesc").click(()=>{
-			$( "#rowDesc" ).toggle( "slow", function() {
+			$( "#rowDesc" ).toggle( "slow", () => {
 			});
 		})
+
+		$("#Razoavel").click(()=>{
+			$( "#modalDescR" ).toggle( "slow", () => {
+			});
+		})
+
+		$("#Mediano").click(()=>{
+			$( "#modalDescM" ).toggle( "slow", () => {
+			});
+		})
+
+		$("#Critico").click(()=>{
+			$( "#modalDescC" ).toggle( "slow", () => {
+			});
+		})
+
+		$("#closeR").click(()=>{
+			$( "#modalDescR" ).hide("slow", () => {
+			});
+		});
+
+		$("#closeM").click(() => {
+			 $( "#modalDescM" ).hide("slow", () => {
+			});
+		})
+
+		$("#closeC").click(() => {
+			 $( "#modalDescC" ).hide("slow", () => {
+			});
+		})
+
 	</script>
 </body>
 </html>
